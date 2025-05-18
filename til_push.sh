@@ -2,12 +2,12 @@
 
 # 今日の日付を取得
 today=$(date "+%Y-%m-%d")
-filepath="TIL/$(date +%Y)/$(date +%m)/${today}.md"
+filepath="$(date +%Y)/$(date +%m)/${today}.md"
 
 # ファイルがあるか確認
 if [ -f "$filepath" ]; then
   git add "$filepath"
-  git commit -m "Update TIL for $today"
+  git commit -m "Add TIL for $today"
   git push
   echo "✅ Pushed today's TIL: $filepath"
 else
